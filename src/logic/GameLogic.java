@@ -38,8 +38,8 @@ public class GameLogic {
 		playerMap = new int[] {4, 4, 4, 4};
 		
 		hasLost = new boolean[] {false, false, false, false};
-//		position = new int[4];
-		position = new int[] {23, 23, 23, 23};
+		position = new int[4];
+//		position = new int[] {7, 7, 7, 7};
 		stop = new int[4];
 		money = new int[] {3000, 3000, 3000, 3000};
 		

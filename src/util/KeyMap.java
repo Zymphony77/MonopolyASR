@@ -13,6 +13,9 @@ public class KeyMap {
 		case 14:
 			break;
 		case 1:
+			if (GameLogic.getInstance().getGameStatus() != 1) {
+				break;
+			}
 			GamePaneManager.getInstance().getTerminal().clickStart();
 			break;
 		case 2:

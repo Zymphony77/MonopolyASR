@@ -50,6 +50,7 @@ public class Main extends Application {
 		root.getChildren().add(gamePane);
 		
 		Scene scene = new Scene(root, WIDTH, HEIGHT);
+		
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("GOWAJEE Monopoly - ASR Project");
 		primaryStage.setResizable(false);

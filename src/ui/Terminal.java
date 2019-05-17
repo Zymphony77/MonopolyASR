@@ -259,8 +259,8 @@ public class Terminal extends Canvas {
 		timeline.play();
 		
 		timeline.setOnFinished(event -> {
-//			GameLogic.getInstance().walk(firstDiceSide + secondDiceSide);
-			GameLogic.getInstance().walk(1);
+			GameLogic.getInstance().walk(firstDiceSide + secondDiceSide);
+//			GameLogic.getInstance().walk(1);
 		});
 	}
 	
@@ -355,7 +355,7 @@ public class Terminal extends Canvas {
 		gc.fillText("Sell", SIZE / 2, 69 * SIZE / 80);
 		
 		if (buyMode == 2) {
-			if (assetLevel <= 3) {
+			if (assetLevel <= 2) {
 				int takeoverPrice = GameLogic.getInstance().getTakeoverPrice(cellId, actionAssetLevel);
 				
 				gc.setFont(Font.font("TH Sarabun New", 18));
@@ -452,7 +452,7 @@ public class Terminal extends Canvas {
 			double y = event.getY();
 			
 			if (x >= SIZE / 2 - SIZE / 4 - SIZE / 16 && x <= SIZE / 2 - SIZE / 16 &&
-					y >= 11 * SIZE / 16 - SIZE / 16 && y <= 11 * SIZE / 16 + SIZE / 16)
+					y >= 11 * SIZE / 16 && y <= 11 * SIZE / 16 + SIZE / 8)
 			{
 				if (!canPay) {
 					return;
@@ -462,7 +462,8 @@ public class Terminal extends Canvas {
 				if (cellId != BoardPane.SIDE + 1) {
 					GameLogic.getInstance().setGameStatus(3);
 				} else {
-					GameLogic.getInstance().setGameStatus(6);
+					GameLogic.getInstance().setGameStatus(2);
+					GameLogic.getInstance().changeTurn();
 				}
 			}
 			
